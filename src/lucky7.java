@@ -15,7 +15,7 @@ public class lucky7 {
 		String vastaus;
         String raha;
 		
-		System.out.println("**Tämä on peli joka arpoo kolme numeroa, jos yksi numeroista on 7, sinä voitat**");
+		System.out.println("**Tämä on peli joka arpoo kolme numeroa, jos yksikin numeroista on 7, sinä voitat**");
 		System.out.println("Syötä haluamasi rahamäärä, jokainen peli maksaa 1 euron");
 		vastaus = in.nextLine();
 		rahat = Integer.parseInt(vastaus);
@@ -28,13 +28,19 @@ public class lucky7 {
 		
 		if(rahat > 0)
 		{		
-		   System.out.println("Peli arpoi sinulle numerot " + randomNumber1 + "," + randomNumber2 + "," + randomNumber3);
+		   System.out.println("Peli arpoi sinulle numerot: " + randomNumber1 + "," + randomNumber2 + "," + randomNumber3);
 		}
 		else {
 		break;}	
 				
 
-		if(randomNumber1 == 7 && randomNumber2 == 7 || randomNumber2 == 7 && randomNumber3 ==7 || randomNumber1 == 7 && randomNumber3 == 7)
+		if(randomNumber1 == 7 && randomNumber2 == 7 && randomNumber3 == 7)
+		{
+		   rahat = rahat+9;
+		   System.out.println("Onnittelut. kaikki kolme lukua osui oikeean, voitit jättipotin 10 euroa!!");
+		   System.out.println("Rahaa jäljellä " + rahat + " euroa.");
+		}
+		else if(randomNumber1 == 7 && randomNumber2 == 7 || randomNumber2 == 7 && randomNumber3 ==7 || randomNumber1 == 7 && randomNumber3 == 7)
 		{
 
 		   rahat = rahat+4;
@@ -50,12 +56,12 @@ public class lucky7 {
 		else
 		{
 		   rahat--;
-		   System.out.println("Mikään numeroista ei ollut 7, hävisit pelin");
-		   System.out.println("rahaa jäljellä " + rahat);
+		   System.out.println("Mikään numeroista ei ollut 7, hävisit pelin.");
+		   System.out.println("Rahaa jäljellä: " + rahat + " euroa.");
 		}
 	       System.out.println("Haluatko pelata uudestaan?");
-	       System.out.println("Jos haluat pelata, paina enter");
-	       System.out.println("Jos et halua enää pelata, kirjoita e ja paina enter");
+	       System.out.println("Jos haluat pelata, paina enter.");
+	       System.out.println("Jos et halua enää pelata, kirjoita e ja paina enter.");
 	       vastaus = in.nextLine();
 		   	   	   
 		}while(rahat == 0 || !vastaus.equals("e"));
