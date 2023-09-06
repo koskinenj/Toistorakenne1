@@ -13,7 +13,7 @@ public class lucky7 {
 		int randomNumber3;
 		int rahat = 0;
 		String vastaus;
-        String raha;
+       
 		
 		System.out.println("**Tämä on peli joka arpoo kolme numeroa, jos yksikin numeroista on 7, sinä voitat**");
 		System.out.println("Syötä haluamasi rahamäärä, jokainen peli maksaa 1 euron");
